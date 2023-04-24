@@ -1,17 +1,12 @@
-import { run } from '../kafka/producer.js'
-import { io } from 'socket.io-client'
+import { sendMessage } from "@/kafka/producer";
+
 
 export default function ByButton() {
-
-  const handleClick = () => {
-    // const socket = io('http://localhost:9092');
-    // socket.emit('test-topic', () => {
-    //   console.log('connected')
-    // })
-    run().catch(console.error)
+  async function handleClick() {
+    fetch("http://localhost:3333/send-message");
   }
 
   return (
-    <button onClick={handleClick}>Enviar mensagem para o kafka</button>
+    <button onClick={() => handleClick()}>Enviar mensagem para o kafka</button>
   )
 }

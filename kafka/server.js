@@ -1,3 +1,4 @@
+const express = require('express');
 const { Kafka } = require('kafkajs')
 
 const kafka = new Kafka({
@@ -7,7 +8,7 @@ const kafka = new Kafka({
 
 const producer = kafka.producer()
 
-export async function sendMessage() {
+async function sendMessage() {
   try {
     await producer.connect()
 
@@ -23,3 +24,12 @@ export async function sendMessage() {
     producer.disconnect()
   }
 }
+
+const app = express();
+
+app.get("/send-message", (request, response) => {
+    sendMessage();
+    return response.status(200);
+});
+
+app.listen(3333, () => { console.log("Server running") });

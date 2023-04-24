@@ -12,6 +12,7 @@ async function sendMessage() {
   try {
     await producer.connect()
 
+    // TODO: definir uma key e um value para esse evento
     await producer.send({
       topic: 'test-topic',
       messages: [

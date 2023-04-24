@@ -1,0 +1,29 @@
+.productContainer {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: #007042 solid 1px;
+  border-radius: 10px;
+}
+
+.productContainer img {
+  height: 150px;
+  object-fit: none;
+}
+
+.productContainer h4 {
+  color: #5e5e5e;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.productContainer h2 {
+  color: #007042;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}

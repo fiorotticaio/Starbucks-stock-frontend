@@ -1,10 +1,13 @@
-.header {
+.headerContainer {
   width: 100%;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  position: sticky;
 }
 
 .logo,
@@ -27,4 +30,9 @@
 .logoText h4 {
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.logoImg {
+  width: 80px;
+  height: 80px;
 }

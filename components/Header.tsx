@@ -36,9 +36,9 @@ export default function Header() {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={styles.headerContainer}>
       <section className={styles.logo}>
-        <Image src={logo} alt="Starbux Logo" />
+        <Image src={logo} alt="Starbux Logo" className={styles.logoImg} />
         <section className={styles.logoText}>
           <Image src={texto} alt="Starbux" />
           <h4>STOCKS SIMULATOR</h4>

@@ -1,0 +1,13 @@
+.buyButton {
+  background-color: #007042;
+  border-radius: 45px;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+}

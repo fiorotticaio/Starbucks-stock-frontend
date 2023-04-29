@@ -1,7 +1,8 @@
 import styles from "@/styles/components/BuyButton.module.css";
 
 export default function BuyButton() {
-  async function handleClick() {
+  function handleClick() {
+    console.log("clicked");
     fetch("http://localhost:3333/send-message");
   }
 

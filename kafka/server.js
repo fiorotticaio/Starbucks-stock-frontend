@@ -11,12 +11,10 @@ const producer = kafka.producer()
 async function sendMessage() {
   try {
     await producer.connect()
-
-    // TODO: definir uma key e um value para esse evento
     await producer.send({
-      topic: 'test-topic',
+      topic: 'coffee_price',
       messages: [
-        { value: 'Hello KafkaJS user!' },
+        { key: "web_coffee_price", value: "4" },
       ],
     })
   } catch (err) {
@@ -29,8 +27,8 @@ async function sendMessage() {
 const app = express();
 
 app.get("/send-message", (request, response) => {
-    sendMessage();
-    return response.status(200);
+  sendMessage();
+  return response.status(200);
 });
 
 app.listen(3333, () => { console.log("Server running") });

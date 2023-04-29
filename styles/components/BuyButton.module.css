@@ -10,4 +10,11 @@
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buyButton:hover {
+  background-color: #005e37;
+  cursor: pointer;
 }

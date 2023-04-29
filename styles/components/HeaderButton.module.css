@@ -11,10 +11,13 @@
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
+
+  transition: all 0.3s ease-in-out;
 }
 
 .activeBtn,
 .Btn:hover {
   background-color: #007042;
   color: #fff;
+  cursor: pointer;
 }

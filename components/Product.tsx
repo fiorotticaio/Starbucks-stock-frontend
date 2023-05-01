@@ -1,8 +1,8 @@
 import Image, { StaticImageData } from "next/image";
 
 import styles from "../styles/components/Product.module.css";
+import api from "@/services/api";
 
-import BuyButton from "./BuyButton";
 
 interface ProductProps {
   name: string;
@@ -12,6 +12,11 @@ interface ProductProps {
 }
 
 export default function Product({ name, size, image, price }: ProductProps) {
+  
+  async function handleClick() {
+    await api.get(`/buy/${price.toString()}`)
+  }
+
   return (
     <div className={styles.productContainer}>
       <Image src={image} alt={name} />
@@ -19,7 +24,7 @@ export default function Product({ name, size, image, price }: ProductProps) {
         {name} - {size}
       </h4>
       <h2>$ {price.toFixed(2)}</h2>
-      <BuyButton />
+      <button className={styles.buyButton} onClick={handleClick}>BUY</button>
     </div>
   );
 }

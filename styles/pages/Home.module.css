@@ -8,6 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  padding-bottom: 50vh;
 }
 .banner {
   width: 100%;
@@ -49,4 +50,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+}
+.infoTable tr th{
+  font-size: 12pt;
+  text-transform: uppercase;
+  color: #007042;
+}
+.infoTable tr td {
+  text-transform: lowercase;
+  color: #5f5f5f;
+  font-size: 10pt;
+  width: 8rem;
+  text-align: center;
 }

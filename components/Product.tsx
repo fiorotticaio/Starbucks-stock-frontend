@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 
 import styles from "../styles/components/Product.module.css";
 import api from "@/services/api";
+import { useState } from "react";
 
 
 interface ProductProps {
@@ -12,9 +13,13 @@ interface ProductProps {
 }
 
 export default function Product({ name, size, image, price }: ProductProps) {
+
+  const [ buttonClicked, setButtonClicked ] = useState<boolean>(false);
   
   async function handleClick() {
+    setButtonClicked(true)
     await api.get(`/buy/${price.toString()}`)
+    setTimeout(()=>setButtonClicked(false),50)
   }
 
   return (
@@ -24,7 +29,10 @@ export default function Product({ name, size, image, price }: ProductProps) {
         {name} - {size}
       </h4>
       <h2>$ {price.toFixed(2)}</h2>
-      <button className={styles.buyButton} onClick={handleClick}>BUY</button>
+      <button 
+        className={styles.buyButton}
+        id={buttonClicked?styles.clicked:''}
+        onClick={handleClick}>BUY</button>
     </div>
   );
 }

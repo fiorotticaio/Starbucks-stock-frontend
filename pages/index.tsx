@@ -10,16 +10,18 @@ import api from "@/services/api";
 
 export default function Home() {
 
-  const [ mediumPrice, setMediumPrice ] = useState<number>(0);
-  const [ largePrice, setLargePrice ] = useState<number>(0);
+  const [ coffee_price_0, setcfp0 ] = useState<number>(0);
+  const [ coffee_price_1, setcfp1 ] = useState<number>(0);
+  const [ coffee_price_2, setcfp2 ] = useState<number>(0);
 
   async function fetchKafka() {
-    const response = await api.get('/price/all')
-    console.log(response.data)
+    const response = await api.get('/all')
+    
     
     if (response.data) {
-      setMediumPrice(parseFloat(response.data))
-      setLargePrice(parseFloat(response.data))
+      setcfp0(parseFloat(response.data.coffee_price_0))
+      setcfp1(parseFloat(response.data.coffee_price_1))
+      setcfp2(parseFloat(response.data.coffee_price_2))
     }
   }
 
@@ -41,17 +43,35 @@ export default function Home() {
             routine. Get to know us and you&apos;ll see: we are so much more
             than what we brew.
           </h5>
+          <table className={styles.infoTable}>
+            <tr>
+              <th>Description</th>  
+              <th>Value</th>  
+            </tr>
+            <tr>
+              <td>REAL STOCK API PRICE</td>
+              <td>{coffee_price_0.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>USER INTERFACE PRICE</td>
+              <td>{coffee_price_1.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>MERGED PRICE</td>
+              <td>{coffee_price_2.toFixed(2)}</td>
+            </tr>
+          </table>
         </section>
         <section className={styles.contentProducts}>
           <Product
             image={mediumCupImg}
-            price={mediumPrice}
+            price={coffee_price_2}
             name="Medium Cup"
             size="250ml"
           />
           <Product
             image={largeCupImg}
-            price={largePrice}
+            price={coffee_price_2*1.5}
             name="Large Cup"
             size="400ml"
           />

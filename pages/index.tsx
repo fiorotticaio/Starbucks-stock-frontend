@@ -44,22 +44,26 @@ export default function Home() {
             than what we brew.
           </h5>
           <table className={styles.infoTable}>
-            <tr>
-              <th>Description</th>  
-              <th>Value</th>  
-            </tr>
-            <tr>
-              <td>REAL STOCK API PRICE</td>
-              <td>{coffee_price_0.toFixed(2)}</td>
-            </tr>
-            <tr>
-              <td>USER INTERFACE PRICE</td>
-              <td>{coffee_price_1.toFixed(2)}</td>
-            </tr>
-            <tr>
-              <td>MERGED PRICE</td>
-              <td>{coffee_price_2.toFixed(2)}</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>Description</th>  
+                <th>Value</th>  
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>REAL STOCK API PRICE</td>
+                <td>{coffee_price_0?coffee_price_0.toFixed(2):0}</td>
+              </tr>
+              <tr>
+                <td>USER INTERFACE PRICE</td>
+                <td>{coffee_price_1?coffee_price_1.toFixed(2):0}</td>
+              </tr>
+              <tr>
+                <td>MERGED PRICE</td>
+                <td>{coffee_price_2?coffee_price_2.toFixed(2):0}</td>
+              </tr>
+            </tbody>
           </table>
         </section>
         <section className={styles.contentProducts}>

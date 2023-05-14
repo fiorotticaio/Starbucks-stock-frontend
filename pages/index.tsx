@@ -81,6 +81,7 @@ export default function Home() {
           />
         </section>
       </div>
+      <div style={{marginTop: "10vh", marginBottom: "-50vh"}} className={styles.banner} />
     </div>
   );
 }
